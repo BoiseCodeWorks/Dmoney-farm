@@ -16,6 +16,7 @@ let plants = [
 ];
 function drawPlants(){
   let plantsRow = document.querySelector("#plants-placeholder")
+  let moneyElem = document.querySelector("#money-placeholder")
   let template = ""
   for (let index = 0; index < plants.length; index++) {
     let plant = plants[index];
@@ -25,12 +26,12 @@ function drawPlants(){
         <p>water: ${plant.water}</p>
         <p>value: ${plant.value}</p>
         <button class="btn btn-primary" onclick="water(${index})">Water</button>
-        <button class="btn btn-success" onclick="harvest()">Harvest</button>
+        <button class="btn btn-success" onclick="harvest(${index})">Harvest</button>
       </div>
     `
   }
   plantsRow.innerHTML = template
-
+moneyElem.textContent = money.toString()
 }
 function water(i) {
   let plant = plants[i]
@@ -39,7 +40,8 @@ function water(i) {
 }
 function harvest(i) {
   let plant = plants[i]
-  plant.water++
+ money += plant.value * plant.water
+ plant.water = 0
   drawPlants()
 }
 
