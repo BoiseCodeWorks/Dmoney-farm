@@ -30,13 +30,19 @@ function drawPlants(){
     `
   }
   plantsRow.innerHTML = template
-}
-function harvest(){
-  corn--;
-  money += 100;
-}
 
+}
 function water(i) {
   let plant = plants[i]
+  plant.water++
+  drawPlants()
 }
+function harvest(i) {
+  let plant = plants[i]
+  plant.water++
+  drawPlants()
+}
+
+
+
 drawPlants()
