@@ -3,13 +3,13 @@ let money = 0;
 let plants = [
   {
     name: 'Corn',
-    image: '',
+    image: 'https://cdn4.vectorstock.com/i/1000x1000/12/58/growing-corn-plant-isolated-on-white-vector-13521258.jpg"',
     water: 0,
     value: 100
   },
   {
     name: 'Celery',
-    image: '',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuov1iUWqnxe9OdgZzvAM3wWFSFMbBcOU8pUfRbGu75cmcL1Ji',
     water: 0,
     value: -5
   }
@@ -23,6 +23,7 @@ function drawPlants(){
     template += `
     <div class="col-6">
         <h1>${plant.name}</h1>
+        <img src="${plant.image}" alt="">
         <p>water: ${plant.water}</p>
         <p>value: ${plant.value}</p>
         <button class="btn btn-primary" onclick="water(${index})">Water</button>
