@@ -24,8 +24,8 @@ function drawPlants(){
         <h1>${plant.name}</h1>
         <p>water: ${plant.water}</p>
         <p>value: ${plant.value}</p>
-        <button class="button" onclick="water()"></button>
-        <button class="button" onclick="harvest()"></button>
+        <button class="btn btn-primary" onclick="water(${index})">Water</button>
+        <button class="btn btn-success" onclick="harvest()">Harvest</button>
       </div>
     `
   }
@@ -35,3 +35,8 @@ function harvest(){
   corn--;
   money += 100;
 }
+
+function water(i) {
+  let plant = plants[i]
+}
+drawPlants()
