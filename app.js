@@ -21,14 +21,15 @@ function drawPlants(){
     let plant = plants[index];
     template += `
     <div class="col-6">
-        <h1>Corn</h1>
-        <p id="water-placeholder">Water placeholder</p>
-        <p id="harvest-placeholder">Harvest placeholder</p>
+        <h1>${plant.name}</h1>
+        <p>water: ${plant.water}</p>
+        <p>value: ${plant.value}</p>
         <button class="button" onclick="water()"></button>
         <button class="button" onclick="harvest()"></button>
       </div>
     `
   }
+  plantsRow.innerHTML = template
 }
 function harvest(){
   corn--;
